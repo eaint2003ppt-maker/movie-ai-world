@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="my">
 <head>
@@ -172,8 +171,7 @@ function go(page){
   document.querySelectorAll('[data-page]').forEach(button => {
     button.classList.toggle('active', button.dataset.page === page);
   });
-  $('title').textContent = titles[page][0];
-  $('sub').textContent = titles[page][1];
+  $('title').textContent = titles[page][0];$('sub').textContent = titles[page][1];
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -191,13 +189,11 @@ async function api(path,data){
   return result;
 }
 
-$('healthBtn').addEventListener('click',async()=>{
-  $('healthOut').textContent='စစ်ဆေးနေပါတယ်...';
+$('healthBtn').addEventListener('click',async()=>{$('healthOut').textContent='စစ်ဆေးနေပါတယ်...';
   $('healthOut').className='status';
   try{
     const result=await api('/api/health');
-    $('healthOut').textContent=JSON.stringify(result,null,2);
-    $('healthOut').className='status ok';
+    $('healthOut').textContent=JSON.stringify(result,null,2);$('healthOut').className='status ok';
   }catch(error){
     $('healthOut').textContent=error.message;
     $('healthOut').className='status err';
@@ -250,9 +246,7 @@ $('copyRecapBtn').addEventListener('click',async()=>{
   try{
     await navigator.clipboard.writeText(text);
     $('copyRecapBtn').textContent='Copied!';
-    setTimeout(()=>$('copyRecapBtn').textContent='Copy Result',1500);
-  }catch{
-    $('recapOut').textContent += '\n\nစာသားကို ဖိထားပြီး Copy လုပ်နိုင်ပါတယ်။';
+    setTimeout(()=>$('copyRecapBtn').textContent='Copy Result',1500);   }catch{$('recapOut').textContent += '\n\nစာသားကို ဖိထားပြီး Copy လုပ်နိုင်ပါတယ်။';
   }
 });
 
@@ -282,8 +276,7 @@ let srt='';
 $('voiceBtn').addEventListener('click',()=>{
   const text=$('voiceText').value.trim();
   if(!text){$('voiceOut').textContent='စာသားအရင်ထည့်ပါ။';return;}
-  if($('voiceMode').value==='voice'){
-    $('voiceOut').textContent='AI Voice မရသေးပါ။ TTS provider API ချိတ်ဆက်ဖို့ လိုအပ်ပါတယ်။ Subtitle (SRT) ကို ရွေးပြီး စမ်းနိုင်ပါတယ်။';
+  if($('voiceMode').value==='voice'){$('voiceOut').textContent='AI Voice မရသေးပါ။ TTS provider API ချိတ်ဆက်ဖို့ လိုအပ်ပါတယ်။ Subtitle (SRT) ကို ရွေးပြီး စမ်းနိုင်ပါတယ်။';
     return;
   }
   const seconds=Number($('subtitleSecs').value);
