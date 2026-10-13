@@ -1,13 +1,323 @@
-<!doctype html><html lang="my"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Movie AI World Studio</title><style>
-:root{--bg:#090a0d;--panel:#15171c;--gold:#d8b45a;--text:#f5f1e7;--muted:#a6a8b0;--line:#30323a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 0,#332711,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}.layout{display:grid;grid-template-columns:235px 1fr;min-height:100vh}.side{background:#0c0d10;border-right:1px solid var(--line);padding:20px 14px}.brand{font-size:20px;font-weight:900;margin:6px 8px 22px}.brand span,.gold{color:var(--gold)}nav{display:grid;gap:7px}button{font:inherit;cursor:pointer}nav button,.secondary{background:transparent;color:#d4d4da;border:1px solid transparent;border-radius:10px;padding:11px;text-align:left}nav button.active,nav button:hover{background:#272116;border-color:#604c24;color:#ffe5a1}.note{font-size:12px;color:var(--muted);margin:25px 8px}.main{padding:25px clamp(14px,4vw,48px);max-width:1450px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;gap:15px;margin-bottom:25px}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800}h1{font-size:clamp(26px,3vw,38px);margin:4px 0}.muted,p{color:var(--muted)}.pill{border:1px solid #584722;color:#f1d68e;border-radius:99px;padding:7px 10px;height:max-content;font-size:12px}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px}.card{background:linear-gradient(145deg,#191b21,#111216);border:1px solid var(--line);border-radius:16px;padding:19px;min-width:0}.hero,.panel{grid-column:span 12}.hero{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(110deg,#211b10,#15151a 65%)}.hero h2{font-size:clamp(24px,3vw,35px);margin:7px 0}.hero p{max-width:720px}.mark{font-size:62px;color:var(--gold)}.tile{grid-column:span 4}.tile h3{margin:6px 0}.tile p{font-size:13px}.emoji{font-size:25px}.field{display:grid;gap:7px;margin:12px 0}.field label{font-size:13px;color:#ddd}.field input,.field textarea,.field select{width:100%;background:#0b0c10;border:1px solid #383b44;border-radius:9px;padding:12px;color:var(--text);font:inherit}.field textarea{min-height:105px}.btn{background:var(--gold);color:#191307;border:0;border-radius:9px;padding:11px 15px;font-weight:800}.secondary{border-color:#393c45;text-align:center}.actions{display:flex;gap:9px;flex-wrap:wrap}.status{background:#0b0c10;border:1px solid #30333b;border-radius:9px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:12px;font-size:13px;color:#d0d1d8}.ok{border-color:#315b3b;color:#baf3c4}.err{border-color:#704040;color:#ffb5b5}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hidden{display:none!important}.chips{display:flex;gap:7px;flex-wrap:wrap}.chips span{border:1px solid #4b3c20;border-radius:99px;padding:5px 9px;font-size:12px;color:#e7d39d}footer{text-align:center;color:#777982;font-size:12px;margin:30px 0}@media(max-width:850px){.layout{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid var(--line);padding:12px}.brand{margin:3px 8px 12px}nav{display:flex;overflow:auto}nav button{white-space:nowrap}.note,.mark{display:none}.tile{grid-column:span 6}.main{padding:17px 12px}}@media(max-width:540px){.tile{grid-column:span 12}.two{grid-template-columns:1fr}.card{padding:14px}.pill{display:none}}
-</style></head><body><div class="layout"><aside class="side"><div class="brand">MOVIE <span>AI</span> WORLD</div><nav><button class="active" data-page="home">⌂ Dashboard</button><button data-page="recap">▤ Movie Recap</button><button data-page="storyboard">▦ Storyboard</button><button data-page="image">✧ AI Image</button><button data-page="video">▶ AI Video</button><button data-page="voice">♫ Voice / Subtitle</button><button data-page="account">♙ Account</button></nav><div class="note">CREATIVE STUDIO<br>Starter build · API keys ကို server မှာသာ သိမ်းပါ။</div></aside><main class="main"><header class="top"><div><div class="eyebrow">AI Creative Studio</div><h1 id="title">မင်္ဂလာပါ၊ Movie Creator</h1><div id="sub" class="muted">ဇာတ်လမ်းကနေ Scene အထိ တစ်နေရာတည်းမှာ စီစဉ်ပါ။</div></div><span class="pill">BETA · BLACK & GOLD</span></header>
-<section id="home" class="grid"><div class="card hero"><div><div class="eyebrow">Your creative workspace</div><h2>Ideas become cinematic stories.</h2><p>Movie Recap၊ Storyboard၊ AI Image၊ AI Video နဲ့ Subtitle workflow တွေကို တစ်နေရာတည်းမှာ စတင်ပါ။ Generation အမှန်တကယ်အလုပ်လုပ်ဖို့ API ချိတ်ဆက်မှု လိုအပ်ပါတယ်။</p><div class="chips"><span>မြန်မာ / English</span><span>Scene Builder</span><span>API-ready</span></div></div><div class="mark">✦</div></div><div class="card tile"><div class="emoji">🎞️</div><h3>Movie Recap</h3><p>ဇာတ်လမ်းစာသားကို recap draft အဖြစ်ပြင်ဆင်ပါ။</p><button class="secondary" data-go="recap">စတင်ရန်</button></div><div class="card tile"><div class="emoji">🧩</div><h3>Storyboard</h3><p>ဇာတ်လမ်းကို Scene prompt များခွဲပါ။</p><button class="secondary" data-go="storyboard">စတင်ရန်</button></div><div class="card tile"><div class="emoji">🎬</div><h3>AI Video</h3><p>Provider API မှ video job စတင်ပါ။</p><button class="secondary" data-go="video">စတင်ရန်</button></div><div class="card panel"><h3>Backend စစ်ဆေးရန်</h3><button class="btn" id="healthBtn">Check API</button><div id="healthOut" class="status">မစစ်ဆေးရသေးပါ။</div></div></section>
-<section id="recap" class="grid hidden"><div class="card panel"><h2>Movie Recap Script</h2><div class="field"><label>ဇာတ်လမ်းစာသား</label><textarea id="recapInput" placeholder="ဇာတ်လမ်းကို ဒီမှာထည့်ပါ..."></textarea></div><div class="two"><div class="field"><label>ဘာသာစကား</label><select id="recapLang"><option value="my">မြန်မာ</option><option value="en">English</option></select></div><div class="field"><label>ပုံစံ</label><select id="recapStyle"><option>Emotional cinematic recap</option><option>Fast-paced summary</option><option>Mystery suspense</option></select></div></div><button class="btn" id="recapBtn">Recap Draft</button><div id="recapOut" class="status">ရလဒ် ဒီမှာပေါ်ပါမယ်။</div></div></section>
-<section id="storyboard" class="grid hidden"><div class="card panel"><h2>Storyboard Maker</h2><div class="field"><label>ဇာတ်လမ်း</label><textarea id="storyInput" placeholder="ဥပမာ — မိုးရွာတဲ့ညမှာ လူငယ်တစ်ယောက် အိမ်ပြန်လာတယ်။"></textarea></div><div class="two"><div class="field"><label>Scene အရေအတွက်</label><select id="sceneCount"><option>3</option><option selected>5</option><option>8</option><option>10</option></select></div><div class="field"><label>Scene ကြာချိန်</label><select id="sceneDuration"><option>5</option><option selected>10</option><option>15</option></select></div></div><div class="actions"><button class="btn" id="storyBtn">Scene ခွဲရန်</button><button class="secondary" id="copyStoryBtn">Copy All</button></div><div id="storyOut" class="status">Scene များ ဒီနေရာမှာပေါ်ပါမယ်။</div></div></section>
-<section id="image" class="grid hidden"><div class="card panel"><h2>AI Image Studio</h2><div class="field"><label>Image Prompt</label><textarea id="imagePrompt" placeholder="Cinematic portrait, realistic lighting, 9:16 vertical..."></textarea></div><div class="field"><label>Model ID</label><input id="imageModel" value="fal-ai/flux/dev"></div><button class="btn" id="imageBtn">AI Image Generate</button><div id="imageOut" class="status">FAL_KEY secret နဲ့ model ကို configure လုပ်ပြီးမှ အလုပ်လုပ်ပါမယ်။</div></div></section>
-<section id="video" class="grid hidden"><div class="card panel"><h2>AI Video Studio</h2><div class="field"><label>Video Prompt</label><textarea id="videoPrompt" placeholder="Slow cinematic camera movement, natural motion..."></textarea></div><div class="field"><label>Model ID</label><input id="videoModel" value="fal-ai/wan/v2.7/image-to-video"></div><div class="field"><label>Reference Image URL (optional, https)</label><input id="videoImage" placeholder="https://example.com/image.jpg"></div><button class="btn" id="videoBtn">AI Video Job စတင်ရန်</button><div id="videoOut" class="status">API key ထည့်ပြီးမှ အလုပ်လုပ်ပါမယ်။ Generation ကုန်ကျစရိတ်ရှိနိုင်ပါတယ်။</div></div></section>
-<section id="voice" class="grid hidden"><div class="card panel"><h2>Voice & Subtitle Studio</h2><p>Subtitle SRT draft ကို ဒီအဆင့်မှာ ဖန်တီးနိုင်ပါတယ်။ တကယ့် AI Voice နဲ့ speech-to-text အတွက် TTS/STT API ချိတ်ရန်လိုပါတယ်။</p><div class="field"><label>ဇာတ်ကြောင်းစာသား</label><textarea id="voiceText" placeholder="အသံဖတ်စေချင်တဲ့ စာသား..."></textarea></div><div class="two"><div class="field"><label>Output</label><select id="voiceMode"><option value="voice">AI Voice</option><option value="subtitle">Subtitle (SRT)</option></select></div><div class="field"><label>တစ်ကြောင်းကြာချိန် (စက္ကန့်)</label><select id="subtitleSecs"><option>3</option><option selected>4</option><option>5</option><option>6</option></select></div></div><div class="actions"><button class="btn" id="voiceBtn">ဖန်တီးရန်</button><button class="secondary" id="downloadSrtBtn">SRT ဒေါင်းရန်</button></div><div id="voiceOut" class="status">Voice API မချိတ်ရသေးပါ။</div></div></section>
-<section id="account" class="grid hidden"><div class="card panel"><h2>Account & Projects</h2><p>ဒီ Starter Version မှာ cloud login မပါသေးပါ။ Supabase Auth / Database ချိတ်ပြီးမှ account, project sync နဲ့ credit ledger ထည့်ပါမယ်။</p><div class="status">Account: Not connected<br>Cloud storage: Not connected<br>AI credits: Provider billing</div><div class="field"><label>Project Name (local draft)</label><input id="projectName" placeholder="My first movie project"></div><button class="btn" id="saveProject">Browser ထဲ Draft သိမ်းရန်</button><div id="accountOut" class="status">Local storage သာဖြစ်ပြီး Cloud sync မဟုတ်ပါ။</div></div></section><footer>Movie AI World · Starter platform scaffold · API keys ကို public HTML ထဲမထည့်ပါနဲ့။</footer></main></div>
+
+<!doctype html>
+<html lang="my">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Movie AI World Studio</title>
+<style>
+:root{--bg:#090a0d;--panel:#15171c;--gold:#d8b45a;--text:#f5f1e7;--muted:#a6a8b0;--line:#30323a}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 70% 0,#332711,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}
+.layout{display:grid;grid-template-columns:235px 1fr;min-height:100vh}
+.side{background:#0c0d10;border-right:1px solid var(--line);padding:20px 14px}
+.brand{font-size:20px;font-weight:900;margin:6px 8px 22px}
+.brand span,.gold{color:var(--gold)}
+nav{display:grid;gap:7px}
+button{font:inherit;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+nav button,.secondary{background:transparent;color:#d4d4da;border:1px solid transparent;border-radius:10px;padding:11px;text-align:left}
+nav button.active,nav button:hover{background:#272116;border-color:#604c24;color:#ffe5a1}
+.note{font-size:12px;color:var(--muted);margin:25px 8px}
+.main{padding:25px clamp(14px,4vw,48px);max-width:1450px;width:100%;margin:auto}
+.top{display:flex;justify-content:space-between;gap:15px;margin-bottom:25px}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800}
+h1{font-size:clamp(26px,3vw,38px);margin:4px 0}
+h2{margin-top:0}
+.muted,p{color:var(--muted)}
+.pill{border:1px solid #584722;color:#f1d68e;border-radius:99px;padding:7px 10px;height:max-content;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px}
+.card{background:linear-gradient(145deg,#191b21,#111216);border:1px solid var(--line);border-radius:16px;padding:19px;min-width:0}
+.hero,.panel{grid-column:span 12}
+.hero{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(110deg,#211b10,#15151a 65%)}
+.hero h2{font-size:clamp(24px,3vw,35px);margin:7px 0}
+.hero p{max-width:720px}
+.mark{font-size:62px;color:var(--gold)}
+.tile{grid-column:span 4}
+.tile h3{margin:6px 0}
+.tile p{font-size:13px}
+.emoji{font-size:25px}
+.field{display:grid;gap:7px;margin:12px 0}
+.field label{font-size:13px;color:#ddd}
+.field input,.field textarea,.field select{width:100%;background:#0b0c10;border:1px solid #383b44;border-radius:9px;padding:12px;color:var(--text);font:inherit}
+.field textarea{min-height:130px;resize:vertical}
+.btn{background:var(--gold);color:#191307;border:0;border-radius:9px;padding:11px 15px;font-weight:800}
+.secondary{border-color:#393c45;text-align:center}
+.actions{display:flex;gap:9px;flex-wrap:wrap}
+.status{background:#0b0c10;border:1px solid #30333b;border-radius:9px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere;margin-top:12px;font-size:13px;color:#d0d1d8}
+.ok{border-color:#315b3b;color:#baf3c4}
+.err{border-color:#704040;color:#ffb5b5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hidden{display:none!important}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chips span{border:1px solid #4b3c20;border-radius:99px;padding:5px 9px;font-size:12px;color:#e7d39d}
+footer{text-align:center;color:#777982;font-size:12px;margin:30px 0}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid var(--line);padding:12px}.brand{margin:3px 8px 12px}nav{display:flex;overflow:auto}nav button{white-space:nowrap}.note,.mark{display:none}.tile{grid-column:span 6}.main{padding:17px 12px}}
+@media(max-width:540px){.tile{grid-column:span 12}.two{grid-template-columns:1fr}.card{padding:14px}.pill{display:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="side">
+  <div class="brand">MOVIE <span>AI</span> WORLD</div>
+  <nav>
+    <button class="active" data-page="home">⌂ Dashboard</button>
+    <button data-page="recap">▤ Movie Recap</button>
+    <button data-page="storyboard">▦ Storyboard</button>
+    <button data-page="image">✧ AI Image</button>
+    <button data-page="video">▶ AI Video</button>
+    <button data-page="voice">♫ Voice / Subtitle</button>
+    <button data-page="account">♙ Account</button>
+  </nav>
+  <div class="note">CREATIVE STUDIO<br>API keys ကို server မှာသာ သိမ်းပါ။</div>
+</aside>
+
+<main class="main">
+<header class="top">
+  <div>
+    <div class="eyebrow">AI Creative Studio</div>
+    <h1 id="title">မင်္ဂလာပါ၊ Movie Creator</h1>
+    <div id="sub" class="muted">ဇာတ်လမ်းကနေ Scene အထိ တစ်နေရာတည်းမှာ စီစဉ်ပါ။</div>
+  </div>
+  <span class="pill">BETA · BLACK & GOLD</span>
+</header>
+
+<section id="home" class="grid">
+  <div class="card hero">
+    <div>
+      <div class="eyebrow">Your creative workspace</div>
+      <h2>Ideas become cinematic stories.</h2>
+      <p>Movie Recap၊ Storyboard၊ AI Image၊ AI Video နဲ့ Subtitle workflow တွေကို တစ်နေရာတည်းမှာ စတင်ပါ။</p>
+      <div class="chips"><span>မြန်မာ / English</span><span>Scene Builder</span><span>API-ready</span></div>
+    </div>
+    <div class="mark">✦</div>
+  </div>
+  <div class="card tile"><div class="emoji">🎞️</div><h3>Movie Recap</h3><p>ဇာတ်လမ်းကို AI နဲ့ recap script ရေးပါ။</p><button class="secondary" data-go="recap">စတင်ရန်</button></div>
+  <div class="card tile"><div class="emoji">🧩</div><h3>Storyboard</h3><p>ဇာတ်လမ်းကို Scene prompt များခွဲပါ။</p><button class="secondary" data-go="storyboard">စတင်ရန်</button></div>
+  <div class="card tile"><div class="emoji">🎬</div><h3>AI Video</h3><p>Video provider API ချိတ်ဆက်ရန် နေရာ။</p><button class="secondary" data-go="video">စတင်ရန်</button></div>
+  <div class="card panel"><h3>Backend စစ်ဆေးရန်</h3><button class="btn" id="healthBtn">Check API</button><div id="healthOut" class="status">မစစ်ဆေးရသေးပါ။</div></div>
+</section>
+
+<section id="recap" class="grid hidden">
+  <div class="card panel">
+    <h2>Movie Recap Script</h2>
+    <p>ဇာတ်လမ်းစာသားကို ထည့်ပြီး Gemini AI နဲ့ recap script ဖန်တီးပါ။</p>
+    <div class="field"><label for="recapInput">ဇာတ်လမ်းစာသား</label><textarea id="recapInput" placeholder="ဇာတ်လမ်းကို ဒီမှာထည့်ပါ..." maxlength="20000"></textarea></div>
+    <div class="two">
+      <div class="field"><label for="recapLang">ဘာသာစကား</label><select id="recapLang"><option value="my">မြန်မာ</option><option value="en">English</option></select></div>
+      <div class="field"><label for="recapStyle">ပုံစံ</label><select id="recapStyle"><option>Emotional cinematic recap</option><option>Fast-paced summary</option><option>Mystery suspense</option></select></div>
+    </div>
+    <div class="actions"><button class="btn" id="recapBtn">Generate Recap</button><button class="secondary" id="copyRecapBtn">Copy Result</button></div>
+    <div id="recapOut" class="status" aria-live="polite">ရလဒ် ဒီမှာပေါ်ပါမယ်။</div>
+  </div>
+</section>
+
+<section id="storyboard" class="grid hidden">
+  <div class="card panel">
+    <h2>Storyboard Maker</h2>
+    <div class="field"><label for="storyInput">ဇာတ်လမ်း</label><textarea id="storyInput" placeholder="ဇာတ်လမ်းကို ဒီမှာထည့်ပါ။"></textarea></div>
+    <div class="two">
+      <div class="field"><label for="sceneCount">Scene အရေအတွက်</label><select id="sceneCount"><option>3</option><option selected>5</option><option>8</option><option>10</option></select></div>
+      <div class="field"><label for="sceneDuration">Scene ကြာချိန်</label><select id="sceneDuration"><option>5</option><option selected>10</option><option>15</option></select></div>
+    </div>
+    <div class="actions"><button class="btn" id="storyBtn">Scene ခွဲရန်</button><button class="secondary" id="copyStoryBtn">Copy All</button></div>
+    <div id="storyOut" class="status">Scene များ ဒီနေရာမှာပေါ်ပါမယ်။</div>
+  </div>
+</section>
+
+<section id="image" class="grid hidden">
+  <div class="card panel"><h2>AI Image Studio</h2><p>Image generation API မချိတ်ရသေးပါ။</p><div class="field"><label for="imagePrompt">Image Prompt</label><textarea id="imagePrompt" placeholder="Cinematic portrait, realistic lighting, 9:16 vertical..."></textarea></div><div id="imageOut" class="status">AI Image အတွက် သီးခြား provider API လိုအပ်ပါတယ်။</div></div>
+</section>
+
+<section id="video" class="grid hidden">
+  <div class="card panel"><h2>AI Video Studio</h2><p>Video generation အတွက် သီးခြား provider API လိုအပ်ပါတယ်။</p><div class="field"><label for="videoPrompt">Video Prompt</label><textarea id="videoPrompt" placeholder="Slow cinematic camera movement, natural motion..."></textarea></div><div id="videoOut" class="status">Video API မချိတ်ရသေးပါ။ Generation ကုန်ကျစရိတ်ရှိနိုင်ပါတယ်။</div></div>
+</section>
+
+<section id="voice" class="grid hidden">
+  <div class="card panel">
+    <h2>Voice & Subtitle Studio</h2>
+    <p>Subtitle SRT ဖန်တီးနိုင်ပါတယ်။ AI Voice အတွက် TTS API သီးခြားလိုအပ်ပါတယ်။</p>
+    <div class="field"><label for="voiceText">ဇာတ်ကြောင်းစာသား</label><textarea id="voiceText" placeholder="အသံဖတ်စေချင်တဲ့ စာသား..."></textarea></div>
+    <div class="two"><div class="field"><label for="voiceMode">Output</label><select id="voiceMode"><option value="voice">AI Voice</option><option value="subtitle">Subtitle (SRT)</option></select></div><div class="field"><label for="subtitleSecs">တစ်ကြောင်းကြာချိန် (စက္ကန့်)</label><select id="subtitleSecs"><option>3</option><option selected>4</option><option>5</option><option>6</option></select></div></div>
+    <div class="actions"><button class="btn" id="voiceBtn">ဖန်တီးရန်</button><button class="secondary" id="downloadSrtBtn">SRT ဒေါင်းရန်</button></div>
+    <div id="voiceOut" class="status">လိုအပ်သည့် option ကို ရွေးပါ။</div>
+  </div>
+</section>
+
+<section id="account" class="grid hidden">
+  <div class="card panel"><h2>Account & Projects</h2><p>Cloud login နဲ့ project sync မချိတ်ရသေးပါ။</p><div class="status">Account: Not connected<br>Cloud storage: Not connected</div><div class="field"><label for="projectName">Project Name</label><input id="projectName" placeholder="My first movie project"></div><button class="btn" id="saveProject">Browser ထဲ Draft သိမ်းရန်</button><div id="accountOut" class="status">Local draft သာဖြစ်ပြီး Cloud sync မဟုတ်ပါ။</div></div>
+</section>
+
+<footer>Movie AI World · API keys ကို public HTML ထဲ မထည့်ပါနဲ့။</footer>
+</main>
+</div>
+
 <script>
-const titles={home:['မင်္ဂလာပါ၊ Movie Creator','ဇာတ်လမ်းကနေ Scene အထိ တစ်နေရာတည်းမှာ စီစဉ်ပါ။'],recap:['Movie Recap','ဇာတ်လမ်းကို recap draft အဖြစ်ပြင်ဆင်ပါ။'],storyboard:['Storyboard Maker','ဇာတ်လမ်းကို Scene အလိုက်ခွဲပါ။'],image:['AI Image Studio','Image generation API ကို ချိတ်ဆက်ပါ။'],video:['AI Video Studio','Prompt ကနေ video job စတင်ပါ။'],voice:['Voice & Subtitle','အသံနဲ့စာတန်း workflow ကို စီမံပါ။'],account:['Account & Projects','Account၊ Project နဲ့ Credit စနစ်။']};function go(p){document.querySelectorAll('main section').forEach(s=>s.classList.toggle('hidden',s.id!==p));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));title.textContent=titles[p][0];sub.textContent=titles[p][1]}document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>go(b.dataset.page));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));async function api(path,data){const r=await fetch(path,{method:data?'POST':'GET',headers:data?{'content-type':'application/json'}:{},body:data?JSON.stringify(data):undefined});const j=await r.json().catch(()=>({error:'Server response မမှန်ပါ။'}));if(!r.ok)throw Error(j.error||'Request failed');return j}healthBtn.onclick=async()=>{healthOut.textContent='စစ်ဆေးနေပါတယ်...';try{healthOut.textContent=JSON.stringify(await api('/api/health'),null,2);healthOut.className='status ok'}catch(e){healthOut.textContent=e.message;healthOut.className='status err'}};recapBtn.onclick=()=>{const t=recapInput.value.trim();recapOut.textContent=t?(recapLang.value==='my'?'ဇာတ်လမ်းအကျဉ်းချုပ် Draft\n\n':'Recap Draft\n\n')+t+'\n\n[AI rewrite API ချိတ်ပြီးမှ အလိုအလျောက်ပြန်ရေးနိုင်ပါမယ်။]':'ဇာတ်လမ်းစာသား အရင်ထည့်ပါ။'};let scenes='';storyBtn.onclick=()=>{const t=storyInput.value.trim();if(!t){storyOut.textContent='ဇာတ်လမ်း အရင်ထည့်ပါ။';return}const parts=t.split(/(?<=[.!?။])\s+/).filter(Boolean),n=+sceneCount.value,d=sceneDuration.value;scenes=Array.from({length:n},(_,i)=>`SCENE ${String(i+1).padStart(2,'0')} · ${d}s\nStory beat: ${parts[Math.min(parts.length-1,Math.floor(i*parts.length/n))]||t}\nVisual prompt: cinematic composition, consistent characters, detailed environment, natural motion, 9:16 vertical, no on-screen text.`).join('\n\n');storyOut.textContent=scenes};copyStoryBtn.onclick=async()=>{if(!scenes)return;try{await navigator.clipboard.writeText(scenes);storyOut.textContent='Copied!\n\n'+scenes}catch{storyOut.textContent=scenes}};imageBtn.onclick=async()=>{imageOut.textContent='Request ပို့နေပါတယ်...';try{const j=await api('/api/generate-image',{prompt:imagePrompt.value,model:imageModel.value});imageOut.textContent=JSON.stringify(j,null,2);if(j.image_url){const a=document.createElement('a');a.href=j.image_url;a.target='_blank';a.textContent='Open generated image';imageOut.appendChild(document.createElement('br'));imageOut.appendChild(a)}imageOut.className='status ok'}catch(e){imageOut.textContent=e.message;imageOut.className='status err'}};videoBtn.onclick=async()=>{videoOut.textContent='Video job တင်နေပါတယ်...';try{videoOut.textContent=JSON.stringify(await api('/api/generate-video',{prompt:videoPrompt.value,model:videoModel.value,image_url:videoImage.value}),null,2);videoOut.className='status ok'}catch(e){videoOut.textContent=e.message;videoOut.className='status err'}};let srt='';voiceBtn.onclick=()=>{const t=voiceText.value.trim();if(!t){voiceOut.textContent='စာသားအရင်ထည့်ပါ။';return}if(voiceMode.value==='voice'){voiceOut.textContent='AI Voice API မချိတ်ရသေးပါ။ TTS provider ချိတ်ပြီးမှ အသံဖိုင်ထုတ်နိုင်ပါမယ်။';return}const secs=+subtitleSecs.value,lines=t.split(/(?<=[.!?။])\s+|\n/).filter(Boolean),tm=x=>[Math.floor(x/3600),Math.floor(x%3600/60),x%60].map(v=>String(v).padStart(2,'0')).join(':')+',000';srt=lines.map((l,i)=>`${i+1}\n${tm(i*secs)} --> ${tm((i+1)*secs)}\n${l}`).join('\n\n');voiceOut.textContent=srt};downloadSrtBtn.onclick=()=>{if(!srt){voiceOut.textContent='SRT ကို အရင်ဖန်တီးပါ။';return}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([srt],{type:'text/plain;charset=utf-8'}));a.download='movie-ai-world.srt';a.click();URL.revokeObjectURL(a.href)};saveProject.onclick=()=>{const n=projectName.value.trim()||'Untitled project';localStorage.setItem('maw-project-name',n);accountOut.textContent='Browser ထဲ Draft name သိမ်းပြီးပါပြီ: '+n+' (Cloud sync မဟုတ်ပါ။)'};
-</script></body></html>
+const $ = id => document.getElementById(id);
+
+const titles = {
+  home:['မင်္ဂလာပါ၊ Movie Creator','ဇာတ်လမ်းကနေ Scene အထိ တစ်နေရာတည်းမှာ စီစဉ်ပါ။'],
+  recap:['Movie Recap','ဇာတ်လမ်းကို Gemini AI နဲ့ recap script ရေးပါ။'],
+  storyboard:['Storyboard Maker','ဇာတ်လမ်းကို Scene အလိုက်ခွဲပါ။'],
+  image:['AI Image Studio','Image generation API ကို ချိတ်ဆက်ရန်။'],
+  video:['AI Video Studio','Video generation API ကို ချိတ်ဆက်ရန်။'],
+  voice:['Voice & Subtitle','အသံနဲ့စာတန်း workflow ကို စီမံပါ။'],
+  account:['Account & Projects','Account၊ Project နဲ့ Credit စနစ်။']
+};
+
+function go(page){
+  document.querySelectorAll('main section').forEach(section => {
+    section.classList.toggle('hidden', section.id !== page);
+  });
+  document.querySelectorAll('[data-page]').forEach(button => {
+    button.classList.toggle('active', button.dataset.page === page);
+  });
+  $('title').textContent = titles[page][0];
+  $('sub').textContent = titles[page][1];
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.querySelectorAll('[data-page]').forEach(button => button.addEventListener('click',()=>go(button.dataset.page)));
+document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click',()=>go(button.dataset.go)));
+
+async function api(path,data){
+  const response = await fetch(path,{
+    method:data ? 'POST' : 'GET',
+    headers:data ? {'Content-Type':'application/json'} : {},
+    body:data ? JSON.stringify(data) : undefined
+  });
+  const result = await response.json().catch(()=>({error:'Server response မမှန်ပါ။'}));
+  if(!response.ok) throw new Error(result.error || 'Request failed');
+  return result;
+}
+
+$('healthBtn').addEventListener('click',async()=>{
+  $('healthOut').textContent='စစ်ဆေးနေပါတယ်...';
+  $('healthOut').className='status';
+  try{
+    const result=await api('/api/health');
+    $('healthOut').textContent=JSON.stringify(result,null,2);
+    $('healthOut').className='status ok';
+  }catch(error){
+    $('healthOut').textContent=error.message;
+    $('healthOut').className='status err';
+  }
+});
+
+/* Movie Recap AI: calls the Cloudflare Pages Function */
+$('recapBtn').addEventListener('click',async()=>{
+  const story=$('recapInput').value.trim();
+  const output=$('recapOut');
+  const button=$('recapBtn');
+
+  if(!story){
+    output.textContent='ဇာတ်လမ်းစာသား အရင်ထည့်ပါ။';
+    output.className='status err';
+    return;
+  }
+
+  if(story.length>20000){
+    output.textContent='စာသားအရမ်းရှည်နေပါတယ်။ အတိုချုံ့ပြီး ထပ်စမ်းပါ။';
+    output.className='status err';
+    return;
+  }
+
+  button.disabled=true;
+  button.textContent='AI ရေးသားနေပါတယ်...';
+  output.textContent='Gemini AI ဆီ တောင်းဆိုနေပါတယ်။ ခဏစောင့်ပါ...';
+  output.className='status';
+
+  try{
+    const result=await api('/api/recap',{
+      story:story,
+      language:$('recapLang').value==='my'?'Burmese':'English',
+      style:$('recapStyle').value
+    });
+    if(!result.recap) throw new Error('AI ရလဒ် မရရှိပါ။');
+    output.textContent=result.recap;
+    output.className='status ok';
+  }catch(error){
+    output.textContent='အမှားဖြစ်နေပါတယ်: '+error.message;
+    output.className='status err';
+  }finally{
+    button.disabled=false;
+    button.textContent='Generate Recap';
+  }
+});
+
+$('copyRecapBtn').addEventListener('click',async()=>{
+  const text=$('recapOut').textContent;
+  try{
+    await navigator.clipboard.writeText(text);
+    $('copyRecapBtn').textContent='Copied!';
+    setTimeout(()=>$('copyRecapBtn').textContent='Copy Result',1500);
+  }catch{
+    $('recapOut').textContent += '\n\nစာသားကို ဖိထားပြီး Copy လုပ်နိုင်ပါတယ်။';
+  }
+});
+
+/* Simple storyboard draft builder */
+let scenes='';
+$('storyBtn').addEventListener('click',()=>{
+  const story=$('storyInput').value.trim();
+  if(!story){$('storyOut').textContent='ဇာတ်လမ်း အရင်ထည့်ပါ။';return;}
+  const parts=story.split(/(?<=[.!?။])\s+/).filter(Boolean);
+  const count=Number($('sceneCount').value);
+  const duration=$('sceneDuration').value;
+  scenes=Array.from({length:count},(_,i)=>{
+    const beat=parts[Math.min(parts.length-1,Math.floor(i*parts.length/count))]||story;
+    return `SCENE ${String(i+1).padStart(2,'0')} · ${duration}s\nStory beat: ${beat}\nVisual prompt: cinematic composition, consistent characters, detailed environment, natural motion, 9:16 vertical, no on-screen text.`;
+  }).join('\n\n');
+  $('storyOut').textContent=scenes;
+});
+
+$('copyStoryBtn').addEventListener('click',async()=>{
+  if(!scenes){$('storyOut').textContent='အရင်ဆုံး Scene ခွဲပါ။';return;}
+  try{await navigator.clipboard.writeText(scenes);$('storyOut').textContent='Copied!\n\n'+scenes;}
+  catch{$('storyOut').textContent=scenes+'\n\nစာသားကို ဖိထားပြီး Copy လုပ်ပါ။';}
+});
+
+/* Subtitle SRT generator */
+let srt='';
+$('voiceBtn').addEventListener('click',()=>{
+  const text=$('voiceText').value.trim();
+  if(!text){$('voiceOut').textContent='စာသားအရင်ထည့်ပါ။';return;}
+  if($('voiceMode').value==='voice'){
+    $('voiceOut').textContent='AI Voice မရသေးပါ။ TTS provider API ချိတ်ဆက်ဖို့ လိုအပ်ပါတယ်။ Subtitle (SRT) ကို ရွေးပြီး စမ်းနိုင်ပါတယ်။';
+    return;
+  }
+  const seconds=Number($('subtitleSecs').value);
+  const lines=text.split(/(?<=[.!?။])\s+|\n/).filter(Boolean);
+  const time=total=>{
+    const hours=Math.floor(total/3600);
+    const minutes=Math.floor(total%3600/60);
+    const secs=total%60;
+    return [hours,minutes,secs].map(v=>String(v).padStart(2,'0')).join(':')+',000';
+  };
+  srt=lines.map((line,i)=>`${i+1}\n${time(i*seconds)} --> ${time((i+1)*seconds)}\n${line}`).join('\n\n');
+  $('voiceOut').textContent=srt;
+});
+
+$('downloadSrtBtn').addEventListener('click',()=>{
+  if(!srt){$('voiceOut').textContent='SRT ကို အရင်ဖန်တီးပါ။ Output မှာ Subtitle (SRT) ကို ရွေးပါ။';return;}
+  const url=URL.createObjectURL(new Blob([srt],{type:'text/plain;charset=utf-8'}));
+  const link=document.createElement('a');
+  link.href=url;
+  link.download='movie-ai-world.srt';
+  link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+
+/* Local browser draft name only; not cloud storage */
+$('saveProject').addEventListener('click',()=>{
+  const name=$('projectName').value.trim()||'Untitled project';
+  try{
+    localStorage.setItem('maw-project-name',name);
+    $('accountOut').textContent='Browser ထဲ Draft name သိမ်းပြီးပါပြီ: '+name+' (Cloud sync မဟုတ်ပါ။)';
+  }catch{
+    $('accountOut').textContent='ဒီ Browser မှာ သိမ်းဆည်းလို့မရပါ။';
+  }
+});
+</script>
+</body>
+</html>
