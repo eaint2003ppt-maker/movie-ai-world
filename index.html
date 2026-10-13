@@ -251,18 +251,56 @@ $('copyRecapBtn').addEventListener('click',async()=>{
 });
 
 /* Simple storyboard draft builder */
-let scenes='';
-$('storyBtn').addEventListener('click',()=>{
-  const story=$('storyInput').value.trim();
-  if(!story){$('storyOut').textContent='ဇာတ်လမ်း အရင်ထည့်ပါ။';return;}
-  const parts=story.split(/(?<=[.!?။])\s+/).filter(Boolean);
-  const count=Number($('sceneCount').value);
-  const duration=$('sceneDuration').value;
-  scenes=Array.from({length:count},(_,i)=>{
-    const beat=parts[Math.min(parts.length-1,Math.floor(i*parts.length/count))]||story;
-    return `SCENE ${String(i+1).padStart(2,'0')} · ${duration}s\nStory beat: ${beat}\nVisual prompt: cinematic composition, consistent characters, detailed environment, natural motion, 9:16 vertical, no on-screen text.`;
-  }).join('\n\n');
-  $('storyOut').textContent=scenes;
+
+let scenes = '';
+
+$('storyBtn').addEventListener('click', async () => {
+  const story = $('storyInput').value.trim();
+  const output = $('storyOut');
+  const btn = $('storyBtn');
+
+  if (!story) {
+    output.textContent = 'ဇာတ်လမ်း အရင်ထည့်ပါ။';
+    return;
+  }
+
+  const count = Number($('sceneCount').value);
+  const duration = $('sceneDuration').value;
+
+  btn.disabled = true;
+  output.textContent = 'Gemini AI က Storyboard ဖန်တီးနေပါတယ်...';
+
+  try {
+    const response = await fetch('/api/storyboard', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        story: story,
+        language: 'Burmese',
+        sceneCount: count,
+        sceneDuration: duration
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.error || `API Error: ${response.status}`
+      );
+    }
+
+    scenes = data.storyboard;
+
+    output.textContent = scenes;
+  } catch (error) {
+    output.textContent =
+      'Storyboard ဖန်တီးမရပါ။\n' + error.message;
+  } finally {
+    btn.disabled = false;
+  }
 });
 
 $('copyStoryBtn').addEventListener('click',async()=>{
