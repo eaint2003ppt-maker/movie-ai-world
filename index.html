@@ -154,6 +154,58 @@ overflow-wrap: anywhere;
 button {
 white-space: normal;
 }
+} 
+/* Movie AI World - Mobile Navigation */
+@media (max-width: 768px) {
+.layout {
+display: block;
+width: 100%;
+max-width: 100%;
+}
+
+.side {
+width: 100%;
+max-width: 100%;
+height: auto;
+position: relative;
+top: auto;
+left: auto;
+padding: 12px;
+box-sizing: border-box;
+}
+
+.side nav {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 6px;
+}
+
+.side nav button {
+flex: 1 1 auto;
+min-width: 110px;
+}
+
+.main {
+width: 100%;
+min-width: 0;
+margin-left: 0;
+padding: 16px;
+box-sizing: border-box;
+}
+}
+
+@media (max-width: 480px) {
+.side nav button {
+flex: 1 1 45%;
+min-width: 0;
+font-size: 13px;
+padding: 10px 6px;
+}
+
+.main {
+padding: 10px;
+}
 }  
 </style>
 </head>
